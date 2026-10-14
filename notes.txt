@@ -1,0 +1,154 @@
+      Scripting Mode                          |        Interactive Mode
+--------------------------------------------------------------------------------------------
+Code is written in a file and saved before    | Code is written and executed line by line
+running                                       |
+--------------------------------------------------------------------------------------------
+Used for writing and running large programs   | Used for testing small code snippets quickly
+---------------------------------------------------------------------------------------------
+Requires saving the file before execution     | No need to save code runs immediately
+--------------------------------------------------------------------------------------------
+Output is shown after the entire script runs  | Output is shown immediately after each line
+
+==============================================================================================
+
+       Compilation                            |           Interpretation
+------------------------------------------------------------------------------------------------
+Compilation is the process of converting the  | Interpretation is the process of converting code  
+entire code into Machine Level Language in    | into Machine Level Language line by line
+one short                                     |
+-------------------------------------------------------------------------------------------------
+For Compilation we use the software called    | For Interpretation we use the software called
+Compiler                                      | Interpreter
+-------------------------------------------------------------------------------------------------
+Compared to Interpretation, compilation is    | Compared to Compilation, Interpretation is 
+faster in execution                           | slower in execution
+-------------------------------------------------------------------------------------------------
+Example: C, Java, C++                         | Example: JS, Python
+
+==================================================================================================
+
+Control Structures in Programming
+1. Conditional Statements (if, if...else, if...else if, switch, ternary operator)
+2. Loops(for, while, do-while, for...of(array/iterables), for...in(objects), nested loop, loop control)
+
+for loop - best for number of iterations is known
+while loop - best for number os iterations is unknown
+do...while loop - best for user interaction scenarios
+for...of loops - cleaner syntax for array interaction
+
+=================================================================================================================
+
+                                    JavaScript Function
+                                           |
+         ------------------------------------------------------------------------------
+         |                                                                             |
+       Basic                                                                        Advanced
+        |                                                                              |
+      1. Function declaration                                                   1. Method Definition
+      2. Function expression                                                    2. Construction Function
+      3. Arrow Function                                                         3. Function as first class citizen
+      4. immediately Invoked                                                    4. Higher Order Function
+         Function expression(IIFE)                                              5. Closures
+                                                                                6. Generator Function 
+Global Execution Context(GEC) - is created in stack memory when we execute the code(node switch.js)
+if the function is called in stack memory is create Execution Context after function execution completed the Execution Context is removed from stack memory
+
+Hoisting - moving declarations into top of the code
+
+Scope - it is that region in your programs inside which a variable is accessible / a function is accessible.
+Global Scope - variable created outside every function every block in javascript accessible everywhere in the program
+
+Object Orientation
+===================
+World is collection of objects
+Every object belongs to a type/class. but class is imaginary. objects of the class are real 
+
+Object
+  1. State/Properties (Has)
+  2. Behaviour (does)
+
+Object Creation Method
+  1. Object Literal Notation
+  2. New Object Constructor
+  3. Constructor function
+  4. Classes(ES6+)
+
+Objects are first class citizen in javascript function
+  - we can store it in a variable
+  - we can pass it as argument to a function
+  - we can also return it from a function
+Functions in javascript is an object. So it is also first class citizen
+ex:-
+function add(a,d) {
+  console.log(a + b)
+}
+
+state/property -> name: add, length: 2
+behaviour => call: function(), apply: function(), bind: function()
+
+Scope Chain
+  - it only check upward only not downward
+ex:- 
+let firstName = "Divya";
+function outerFunction() {
+  let lastName = "Chandravel";
+  function innerFunction() {
+    let fullName = firstName + " " + lastName;
+    console.log(fullName);
+  }
+  innerFunction();
+}
+outerFunction();
+
+Global Scope - firstName- Divya
+              ^
+              |
+outerFunction() Scope - lastName- Chandravel, innerFunction()
+              ^
+              |
+innerFunction() Scope - fullName - Divya Chandravel
+
+Closure
+Lexical Scope - A lexical scope is such a scope which will continue to exist in the memory even if the function finish its execution
+ ex: - 
+ function outer() {
+  let outerVariable = 10;
+  function inner() {
+    console.log(outerVariable);
+  }
+  return inner;
+}
+const innerFunc = outer();
+innerFunc();
+
+outer - outerVariable - 10 ---> Lexical scope
+inner - 
+
+if the outer finished its execution that will remove from memory but inner function need those parent data so it form closure around its lexical scope so inner function can access outerVariable after outer function finished its execution
+
+Callback Function - A function which is passed as input to the other function is called callback function
+Higher Order Function (HOF) - 
+
+Array methods
+Unshift() - to add element to beginning(it quit costly method)
+push() - to add element to end
+Shift() - to remove element from beginning(it quit costly method)
+Pop() - to remove element from end
+Splice() - to remove an element at any index, we can insert an element at any index, we can delete and replace or we can insert and also replace
+indexOf() - to find the index of the element(alway give the result of first occurrence)(if the element not present in the array means it will always return -1)
+lastIndexOf() - used to find the last index of the element
+includes() - to check whether the element is present in an array or not
+
+map() - take an array  as input and it will create a new array in which every element in the original array gets transformed into something in the new array
+filter() - based on some condition it is going to filter out values from original array and put it into a new array
+reduce() - to reduce the entire array into a single value as output
+some() -  tests if at least one element passes the test
+every() - tests if all the element should passes the test 
+find() - find the element which is passes the condition (alway give the result of first occurrence)
+findIndex() - to find the index of the element which is passes the condition(alway give the result of first occurrence)
+sort() - to sort the given array
+
+MultiDimension Array
+--------------------
+  Dimension - it means the amount of data or information required to access the content inside an 
+  
