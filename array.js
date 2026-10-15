@@ -80,3 +80,47 @@ for (let i = 0; i < arrM.length; i++) {
     console.log(arrM[i][j]);
   }
 }
+
+// Three Dimensional array
+let arr3D = [
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+  ],
+  [
+    [7, 8, 9],
+    [10, 11, 12],
+  ],
+];
+
+for (let i = 0; i < arr3D.length; i++) {
+  for (let j = 0; j < arr3D[i].length; j++) {
+    let row = "";
+    for (let k = 0; k < arr3D[i][j].length; k++) {
+      row += arr3D[i][j][k] + " ";
+      //   console.log(arr3D[i][j][k]);
+    }
+    console.log(row);
+  }
+}
+
+//Shallow copy and deep copy
+let originalArray = [1, 2, 3, 4, 5];
+// let shallowCopy = originalArray;
+let arrayCopy = [...originalArray]; // Using spread operator for shallow copy
+let arrayCopy2 = originalArray.slice(); // Using slice method for shallow copy
+let deepCopy = JSON.parse(JSON.stringify(originalArray)); // Using JSON methods for deep copy
+let shallowCopy = originalArray; // This creates a reference to the original array, not a copy
+
+let arr2 = [[1,2],[3,4]];
+let shallowCopy2D = arr2.slice(); // Shallow copy of 2D array
+console.log(arr2); // [[1, 2], [3, 4]]
+console.log(shallowCopy2D); // [[1, 2], [3, 4]]
+
+arr2[1].push(5); // Modifying the original array
+console.log(arr2); // [[1, 2], [3, 4, 5]]
+console.log(shallowCopy2D); // [[1, 2], [3, 4, 5]] - The shallow copy reflects the change in the original array
+
+let deepCopy2D = structuredClone(arr2); // Deep copy of 2D array
+console.log(arr2); // [[1, 2], [3, 4, 5]]
+console.log(deepCopy2D); // [[1, 2], [3, 4]] - The deep copy does not reflect the change in the original array

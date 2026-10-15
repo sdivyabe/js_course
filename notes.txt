@@ -152,3 +152,37 @@ MultiDimension Array
 --------------------
   Dimension - it means the amount of data or information required to access the content inside an 
   
+Shallow copy - surface level copy 
+
+String - sequence of character. Strings are Immutable we can not modify it
+       - Using double quote to create String
+       - using single quote to create String
+       - using String Literal Template
+
+String Interning - This process of ensuring only a single copy of a unique value of a string exists in memory is call string interning.
+                 - string is a primitive data type in JavaScript, and when we create a string literal like "JavaScript", it is stored in a special area of memory called the string pool. If we create another string literal with the same value, like str1 = "JavaScript", it will point to the same memory location as str, instead of creating a new string object. This is known as string interning.
+                 - for memory optimization
+                 - it make string comparison is faster
+String methods
+split() - it split the string and returns array of strings
+trim() - remove unnecessary space
+toUpperCase() - for capital letter
+toLowerCase() - for small letter
+includes() - check whether the string contains particular Word
+indexOf() - 
+replace() - used to replace particular word into another word in string it returns new string
+endsWith()
+startWith()
+repeat()
+
+
+Synchronous - it means line by execution after executing first line only second line execute
+Thread - is a line of execution
+JavaScript is called as single threaded synchronously executing programming Language (On the stack, at any given point of time only one thing can execute never multiple thing)
+
+Promises
+   - Whenever in JavaScript one macro task from another macro task between two macro task execution first all micro task are completed. then only the switch happens to the macro task
+
+JSON - JavaScript Object Notation
+
+Fetch - fetch call will always return a promise
